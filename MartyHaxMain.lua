@@ -85,7 +85,7 @@ local UI = Material.Load({
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Dark"
+    Theme = "Aqua"
 })
 
 local Home = UI.New({
@@ -192,6 +192,60 @@ local coomzone = CombatPage.Slider({
            end
        end
    end
+})
+
+   CombatPage.Button({
+   Text = "Auto-Fire Moves (Relog to disable)",
+   Callback = function()
+       local uis = Game:GetService("UserInputService")
+local VirtualInputManager = game:GetService('VirtualInputManager')
+
+
+
+uis.InputBegan:connect(function(input, gameProcessedEvent)
+  if input.UserInputType == Enum.UserInputType.Keyboard then
+      if input.KeyCode == Enum.KeyCode.Two then
+          task.wait(0.4)
+          VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
+          task.wait(0.1)
+          VirtualInputManager:SendKeyEvent(true, "One", false, game)
+end
+end
+end)
+
+uis.InputBegan:connect(function(input, gameProcessedEvent)
+  if input.UserInputType == Enum.UserInputType.Keyboard then
+      if input.KeyCode == Enum.KeyCode.Three then
+          task.wait(0.4)
+          VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
+          task.wait(0.1)
+          VirtualInputManager:SendKeyEvent(true, "One", false, game)
+end
+end
+end)
+
+uis.InputBegan:connect(function(input, gameProcessedEvent)
+  if input.UserInputType == Enum.UserInputType.Keyboard then
+      if input.KeyCode == Enum.KeyCode.Four then
+          task.wait(0.4)
+          VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
+          task.wait(0.1)
+          VirtualInputManager:SendKeyEvent(true, "One", false, game)
+end
+end
+end)
+
+uis.InputBegan:connect(function(input, gameProcessedEvent)
+  if input.UserInputType == Enum.UserInputType.Keyboard then
+      if input.KeyCode == Enum.KeyCode.Five then
+          task.wait(0.4)
+          VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
+          task.wait(0.1)
+          VirtualInputManager:SendKeyEvent(true, "One", false, game)
+end
+end
+end)
+   end,
 })
 
 local WL_t_D = UtilityPage.Slider({
@@ -303,3 +357,21 @@ end
 end)
 end
 end)
+
+
+-- Teleports tab
+TeleportsPage.Button({
+	Text = "Sanction",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(47.5704155, 471.243195, 1146.49146, 0.991448581, 0, 0.130497962, 0, 1, 0, -0.130497962, 0, 0.991448581)
+	end
+ })
+
+ 
+
+ TeleportsPage.Button({
+	Text = "Elder One's Conduit",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.379517, 313.685333, 1432.37793, 0.913549721, 0, 0.406727046, 0, 1, 0, -0.406727046, 0, 0.913549721)
+	end
+ })
