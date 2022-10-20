@@ -62,6 +62,12 @@ local animIds = {
    "rbxassetid://10630821574";
    "rbxassetid://10630980051";
    "rbxassetid://10630402364";
+   "rbxassetid://9592367784";
+   "rbxassetid://10620241792";
+   "rbxassetid://9388048957";
+   "rbxassetid://9388007530";
+   "rbxassetid://9388048957";
+   "rbxassetid://9388007530";
    
 }
 
@@ -188,7 +194,7 @@ local coomzone = CombatPage.Slider({
            if type(v) == "table" and v.SpeedMultiplier then
                v.Recharge = 0.01
                v.WindUp = 0.01
-               v.SpeedMultiplier = 1.16
+               v.SpeedMultiplier = 1.12
            end
        end
    end
