@@ -85,7 +85,7 @@ local UI = Material.Load({
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Aqua"
+    Theme = "Dark"
 })
 
 local Home = UI.New({
@@ -188,7 +188,7 @@ local coomzone = CombatPage.Slider({
            if type(v) == "table" and v.SpeedMultiplier then
                v.Recharge = 0.01
                v.WindUp = 0.01
-               v.SpeedMultiplier = 1.12
+               v.SpeedMultiplier = 1.16
            end
        end
    end
