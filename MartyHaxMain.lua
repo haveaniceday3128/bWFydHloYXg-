@@ -28,6 +28,20 @@ local animIds = {
    "rbxassetid://9140032892";
    "rbxassetid://9140037647";
    "rbxassetid://9140032892";
+   "rbxassetid://11065468510";
+   "rbxassetid://9033635329";
+   "rbxassetid://9033632351";
+   "rbxassetid://9033635329";
+   "rbxassetid://9033632351";
+   "rbxassetid://10718290567";
+   "rbxassetid://9614600746";
+   "rbxassetid://9614600746";
+   "rbxassetid://9606887464";
+   "rbxassetid://10718089490";
+   "rbxassetid://9049285540";
+   "rbxassetid://9476751471";
+   "rbxassetid://10730703615";
+   "rbxassetid://9866728447";
 }
 
 -- Settings Vars
@@ -49,7 +63,7 @@ local UI = Material.Load({
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Dark"
+    Theme = "Aqua"
 })
 
 local Home = UI.New({
@@ -249,7 +263,7 @@ for _, anim in next, anims do
                            end
                           
 
-wait(0.3) --Prevents mass event firing
+wait(0.1) --Prevents mass event firing
 end
 end
 end
