@@ -31,7 +31,6 @@ local animIds = {
    "rbxassetid://11065468510";
    "rbxassetid://9033635329";
    "rbxassetid://9033632351";
-   "rbxassetid://9033635329";
    "rbxassetid://9033632351";
    "rbxassetid://10718290567";
    "rbxassetid://9614600746";
@@ -47,12 +46,30 @@ local animIds = {
    "rbxassetid://9140032892";
    "rbxassetid://9140040601";
    "rbxassetid://9185633387";
+   "rbxassetid://9033632351";
+   "rbxassetid://9786562693";
+   "rbxassetid://9087086769";
+   "rbxassetid://9033633924";
+   "rbxassetid://9086821643";
+   "rbxassetid://9037543126";
+   "rbxassetid://7309835432";
+   "rbxassetid://10879539412";
+   "rbxassetid://9033635329";
+   "rbxassetid://10517281162";
+   "rbxassetid://9477624535";
+   "rbxassetid://10630086664";
+   "rbxassetid://10630714287";
+   "rbxassetid://10630821574";
+   "rbxassetid://10630980051";
+   "rbxassetid://10630402364";
+   
 }
 
 -- Settings Vars
 local SetWalk = 25
 local parryDist = 15
 local reachDist = 5
+local APDelay = 0.3
 
 function WalkspeedSet (enabled)
    pcall(function()
@@ -142,6 +159,16 @@ local AP_t_D = CombatPage.Slider({
    Def = parryDist
 })
 
+local coomzone = CombatPage.Slider({
+   Text = "AutoParry Delay",
+   Callback = function(value)
+       APDelay = value
+   end,
+   Min = 0.01,
+   Max = 1,
+   Def = APDelay
+})
+
    CombatPage.Button({
    Text = "Reach",
    Callback = function()
@@ -161,7 +188,7 @@ local AP_t_D = CombatPage.Slider({
            if type(v) == "table" and v.SpeedMultiplier then
                v.Recharge = 0.01
                v.WindUp = 0.01
-               v.SpeedMultiplier = 1.20
+               v.SpeedMultiplier = 1.12
            end
        end
    end
@@ -268,7 +295,7 @@ for _, anim in next, anims do
                            end
                           
 
-wait(0.1) --Prevents mass event firing
+wait(APDelay) --Prevents mass event firing
 end
 end
 end
