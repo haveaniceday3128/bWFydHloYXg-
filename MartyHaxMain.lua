@@ -156,7 +156,7 @@ local AP_t_D = CombatPage.Slider({
            if type(v) == "table" and v.SpeedMultiplier then
                v.Recharge = 0.01
                v.WindUp = 0.01
-               v.SpeedMultiplier = 1.25
+               v.SpeedMultiplier = 1.20
            end
        end
    end
