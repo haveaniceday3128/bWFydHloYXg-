@@ -42,6 +42,11 @@ local animIds = {
    "rbxassetid://9476751471";
    "rbxassetid://10730703615";
    "rbxassetid://9866728447";
+   "rbxassetid://9140032892";
+   "rbxassetid://9140037647";
+   "rbxassetid://9140032892";
+   "rbxassetid://9140040601";
+   "rbxassetid://9185633387";
 }
 
 -- Settings Vars
