@@ -66,7 +66,6 @@ local animIds = {
 local dodgeIds = {
     "rbxassetid://10620241792";
     "rbxassetid://7309835432";
-    
 }
 
 local whirligigIds = {
@@ -358,17 +357,17 @@ end)
 
 function parry()
 local VirtualInputManager = game:GetService('VirtualInputManager')
-VirtualInputManager:SendMouseButtonEvent(1, 1, 1, false, game, 1)
+VirtualInputManager:SendMouseButtonEvent(1, 1, 1, true, game, 1)
 end
 
 function dodge()
 local VirtualInputManager = game:GetService('VirtualInputManager')
 VirtualInputManager:SendKeyEvent(true, "D", false, game)
-task.wait(0.2)
+task.wait(0.01)
 VirtualInputManager:SendKeyEvent(true, "Q", false, game)
-task.wait()
+task.wait(0.01)
 VirtualInputManager:SendKeyEvent(false, "D", false, game)
-task.wait()
+task.wait(0.01)
 VirtualInputManager:SendKeyEvent(false, "Q", false, game)
 end
 
