@@ -3,6 +3,22 @@ local runService = game:GetService("RunService")
 local plr = game.Players.LocalPlayer
 local char = plr.Character
 
+local debounce = false
+local cooldown = 0.8
+
+local uis = Game:GetService("UserInputService")
+
+
+uis.InputBegan:connect(function(inst)
+  if inst.UserInputType == Enum.UserInputType.MouseButton1 then
+      if debounce == false then
+          debounce = true
+          wait(cooldown)
+          debounce = false
+      end
+  end
+end)
+
 local sound = Instance.new("Sound", game.Workspace)
 sound.SoundId = "rbxassetid://1283290053"
 
@@ -13,69 +29,59 @@ end
 sound:Play()
 
 local animIds = {
-   "rbxassetid://9830378842";
-   "rbxassetid://9606887464";
-   "rbxassetid://9832216197";
-   "rbxassetid://9613316754";
-   "rbxassetid://10195768664";
-   "rbxassetid://10182744456";
-   "rbxassetid://9830678613";
-   "rbxassetid://9832426360";
-   "rbxassetid://9832216197";
-   "rbxassetid://9832426360";
-   "rbxassetid://9832216197";
-   "rbxassetid://9140040601";
-   "rbxassetid://9140032892";
-   "rbxassetid://9140037647";
-   "rbxassetid://9140032892";
-   "rbxassetid://11065468510";
-   "rbxassetid://9033635329";
-   "rbxassetid://9033632351";
-   "rbxassetid://9033632351";
-   "rbxassetid://10718290567";
-   "rbxassetid://9614600746";
-   "rbxassetid://9614600746";
-   "rbxassetid://9606887464";
-   "rbxassetid://10718089490";
-   "rbxassetid://9049285540";
-   "rbxassetid://9476751471";
-   "rbxassetid://10730703615";
-   "rbxassetid://9866728447";
-   "rbxassetid://9140032892";
-   "rbxassetid://9140037647";
-   "rbxassetid://9140032892";
-   "rbxassetid://9140040601";
-   "rbxassetid://9185633387";
-   "rbxassetid://9033632351";
-   "rbxassetid://9786562693";
-   "rbxassetid://9087086769";
-   "rbxassetid://9033633924";
-   "rbxassetid://9086821643";
-   "rbxassetid://9037543126";
-   "rbxassetid://7309835432";
-   "rbxassetid://10879539412";
-   "rbxassetid://9033635329";
-   "rbxassetid://10517281162";
-   "rbxassetid://9477624535";
-   "rbxassetid://10630086664";
-   "rbxassetid://10630714287";
-   "rbxassetid://10630821574";
-   "rbxassetid://10630980051";
-   "rbxassetid://10630402364";
-   "rbxassetid://9592367784";
-   "rbxassetid://10620241792";
-   "rbxassetid://9388048957";
-   "rbxassetid://9388007530";
-   "rbxassetid://9388048957";
-   "rbxassetid://9388007530";
-   
+    "rbxassetid://9388007530";
+    "rbxassetid://9388048957";
+    "rbxassetid://9388007530";
+    "rbxassetid://9388048957";
+    "rbxassetid://9832216197";
+    "rbxassetid://9832426360";
+    "rbxassetid://9832216197";
+    "rbxassetid://9832426360";
+    "rbxassetid://9830678613";
+    "rbxassetid://9606887464";
+    "rbxassetid://9832216197";
+    "rbxassetid://9613316754";
+    "rbxassetid://10182744456";
+    "rbxassetid://10195768664";
+    "rbxassetid://9830378842";
+    "rbxassetid://10718290567";
+    "rbxassetid://9614600746";
+    "rbxassetid://9614600746";
+    "rbxassetid://9606887464";
+    "rbxassetid://10718089490";
+    "rbxassetid://9614600746";
+    "rbxassetid://9613316754";
+    "rbxassetid://9623992231";
+    "rbxassetid://9606887464";
+    "rbxassetid://9681756802";
+    "rbxassetid://9830378842";
+    "rbxassetid://9140032892";
+    "rbxassetid://9140037647";
+    "rbxassetid://9140032892";
+    "rbxassetid://9140040601";
+    "rbxassetid://9185633387";
+    "rbxassetid://9610581774";
+}
+
+local dodgeIds = {
+    "rbxassetid://10620241792";
+    "rbxassetid://7309835432";
+    
+}
+
+local whirligigIds = {
+    "rbxassetid://10630402364";
+    "rbxassetid://10630980051";
+    "rbxassetid://10630821574";
+    "rbxassetid://10630714287";
+    "rbxassetid://10630086664";
 }
 
 -- Settings Vars
 local SetWalk = 25
 local parryDist = 15
-local reachDist = 5
 local APDelay = 0.3
+local dodgeDist = 15
 
 function WalkspeedSet (enabled)
    pcall(function()
@@ -91,7 +97,7 @@ local UI = Material.Load({
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Dark"
+    Theme = "Aqua"
 })
 
 local Home = UI.New({
@@ -135,7 +141,7 @@ Home.Button({
 --[[--------------------------------------------------------------------------------------------]]
 
 local Toggle1 = CombatPage.Toggle({
-   Text = "Auto Parry",
+   Text = "AutoParry",
    Callback = function(value)
        -- ye
    end,
@@ -173,6 +179,24 @@ local coomzone = CombatPage.Slider({
    Min = 0.01,
    Max = 1,
    Def = APDelay
+})
+
+local asehaeh = CombatPage.Toggle({
+   Text = "AutoDodge",
+   Callback = function(value)
+       -- ye
+   end,
+   Enabled = false
+})
+
+local DD = CombatPage.Slider({
+   Text = "AutoDodge Distance",
+   Callback = function(value)
+       dodgeDist = value
+   end,
+   Min = 0,
+   Max = 50,
+   Def = dodgeDist
 })
 
    CombatPage.Button({
@@ -334,7 +358,25 @@ end)
 
 function parry()
 local VirtualInputManager = game:GetService('VirtualInputManager')
-VirtualInputManager:SendMouseButtonEvent(1, 1, 1, true, game, 1)
+VirtualInputManager:SendMouseButtonEvent(1, 1, 1, false, game, 1)
+end
+
+function dodge()
+local VirtualInputManager = game:GetService('VirtualInputManager')
+VirtualInputManager:SendKeyEvent(true, "D", false, game)
+task.wait(0.2)
+VirtualInputManager:SendKeyEvent(true, "Q", false, game)
+task.wait()
+VirtualInputManager:SendKeyEvent(false, "D", false, game)
+task.wait()
+VirtualInputManager:SendKeyEvent(false, "Q", false, game)
+end
+
+function whirligigdodge()
+local VirtualInputManager = game:GetService('VirtualInputManager')
+VirtualInputManager:SendKeyEvent(true, "Q", false, game)
+task.wait()
+VirtualInputManager:SendKeyEvent(false, "Q", false, game)
 end
 
 -- Main loop
@@ -349,10 +391,11 @@ local anims = plrChar.Humanoid:GetPlayingAnimationTracks()
 for _, anim in next, anims do
                        if table.find(animIds, anim.Animation.AnimationId) then
                            if Toggle1:GetState() then
+                               if debounce == false then
                                if (plrChar.HumanoidRootPart.Position - char.HumanoidRootPart.Position).Magnitude <= parryDist and plrChar.Humanoid.Health > 0 and not plrChar.Humanoid.PlatformStand then
    parry()
    end
-                           end
+                           end end
                           
 
 wait(APDelay) --Prevents mass event firing
@@ -364,6 +407,59 @@ end)
 end
 end)
 
+spawn(function()
+while true do
+pcall(function()
+char = plr.Character
+runService.RenderStepped:Wait()
+for i, plrChar in next, workspace.Alive:GetChildren() do
+if plrChar ~= char then
+local anims = plrChar.Humanoid:GetPlayingAnimationTracks()
+for _, anim in next, anims do
+                       if table.find(dodgeIds, anim.Animation.AnimationId) then
+                           if asehaeh:GetState() then
+                               if debounce == false then
+                               if (plrChar.HumanoidRootPart.Position - char.HumanoidRootPart.Position).Magnitude <= dodgeDist and plrChar.Humanoid.Health > 0 and not plrChar.Humanoid.PlatformStand then
+   dodge()
+   end
+                           end end
+                          
+
+wait(0.01) --Prevents mass event firing
+end
+end
+end
+end
+end)
+end
+end)
+
+spawn(function()
+while true do
+pcall(function()
+char = plr.Character
+runService.RenderStepped:Wait()
+for i, plrChar in next, workspace.Alive:GetChildren() do
+if plrChar ~= char then
+local anims = plrChar.Humanoid:GetPlayingAnimationTracks()
+for _, anim in next, anims do
+                       if table.find(whirligigIds, anim.Animation.AnimationId) then
+                           if asehaeh:GetState() then
+                               if debounce == false then
+                               if (plrChar.HumanoidRootPart.Position - char.HumanoidRootPart.Position).Magnitude <= dodgeDist and plrChar.Humanoid.Health > 0 and not plrChar.Humanoid.PlatformStand then
+   whirligigdodge()
+   end
+                           end end
+                          
+
+wait(0.01) --Prevents mass event firing
+end
+end
+end
+end
+end)
+end
+end)
 
 -- Teleports tab
 TeleportsPage.Button({
