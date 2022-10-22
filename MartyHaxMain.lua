@@ -66,6 +66,15 @@ local animIds = {
 local dodgeIds = {
     "rbxassetid://10620241792";
     "rbxassetid://7309835432";
+    "rbxassetid://9605119856";
+    "rbxassetid://9033632351";
+    "rbxassetid://9033635329";
+    "rbxassetid://9033632351";
+    "rbxassetid://9033633924";
+    "rbxassetid://9087289517";
+    "rbxassetid://9185633387";
+    "rbxassetid://9614600746";
+    "rbxassetid://10218213093";
 }
 
 local whirligigIds = {
@@ -176,7 +185,7 @@ local coomzone = CombatPage.Slider({
        APDelay = value
    end,
    Min = 0.01,
-   Max = 1,
+   Max = 2,
    Def = APDelay
 })
 
@@ -217,7 +226,7 @@ local DD = CombatPage.Slider({
            if type(v) == "table" and v.SpeedMultiplier then
                v.Recharge = 0.01
                v.WindUp = 0.01
-               v.SpeedMultiplier = 1.12
+               v.SpeedMultiplier = 1.06
            end
        end
    end
@@ -234,7 +243,7 @@ local VirtualInputManager = game:GetService('VirtualInputManager')
 uis.InputBegan:connect(function(input, gameProcessedEvent)
   if input.UserInputType == Enum.UserInputType.Keyboard then
       if input.KeyCode == Enum.KeyCode.Two then
-          task.wait(0.4)
+          task.wait(0.2)
           VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
           task.wait(0.1)
           VirtualInputManager:SendKeyEvent(true, "One", false, game)
@@ -245,7 +254,7 @@ end)
 uis.InputBegan:connect(function(input, gameProcessedEvent)
   if input.UserInputType == Enum.UserInputType.Keyboard then
       if input.KeyCode == Enum.KeyCode.Three then
-          task.wait(0.4)
+          task.wait(0.2)
           VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
           task.wait(0.1)
           VirtualInputManager:SendKeyEvent(true, "One", false, game)
@@ -256,7 +265,7 @@ end)
 uis.InputBegan:connect(function(input, gameProcessedEvent)
   if input.UserInputType == Enum.UserInputType.Keyboard then
       if input.KeyCode == Enum.KeyCode.Four then
-          task.wait(0.4)
+          task.wait(0.2)
           VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
           task.wait(0.1)
           VirtualInputManager:SendKeyEvent(true, "One", false, game)
@@ -267,7 +276,7 @@ end)
 uis.InputBegan:connect(function(input, gameProcessedEvent)
   if input.UserInputType == Enum.UserInputType.Keyboard then
       if input.KeyCode == Enum.KeyCode.Five then
-          task.wait(0.4)
+          task.wait(0.2)
           VirtualInputManager:SendMouseButtonEvent(1, 1, 0, true, game, 1)
           task.wait(0.1)
           VirtualInputManager:SendKeyEvent(true, "One", false, game)
