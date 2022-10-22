@@ -59,7 +59,6 @@ local animIds = {
     "rbxassetid://9140037647";
     "rbxassetid://9140032892";
     "rbxassetid://9140040601";
-    "rbxassetid://9185633387";
     "rbxassetid://9610581774";
 }
 
