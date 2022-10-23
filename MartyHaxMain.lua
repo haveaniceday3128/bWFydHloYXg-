@@ -1,3 +1,4 @@
+
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/UILib.lua"))()
 local runService = game:GetService("RunService")
 local plr = game.Players.LocalPlayer
@@ -18,6 +19,33 @@ uis.InputBegan:connect(function(inst)
       end
   end
 end)
+
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel.Position = UDim2.new(0.0907079652, 0, 0.953865409, 0)
+TextLabel.Size = UDim2.new(0, 151, 0, 44)
+TextLabel.ZIndex = 2
+TextLabel.Font = Enum.Font.SourceSansSemibold
+TextLabel.Text = "MartyHax Lite Executed, use the Control Module"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeTransparency = 0.500
+TextLabel.TextWrapped = true
 
 local sound = Instance.new("Sound", game.Workspace)
 sound.SoundId = "rbxassetid://1283290053"
@@ -283,6 +311,16 @@ end
 end
 end)
    end,
+})
+
+   CombatPage.Button({
+   Text = "Infinite Stamina",
+   Callback = function()
+       game:GetService("Players").random660.Backpack.Stamina:Destroy() -- change to your path
+      local new = Instance.new("IntValue", game:GetService("Players").random660.Backpack) -- also change to your path
+      new.Name = "Stamina"
+      new.Value = "100"
+end
 })
 
 local WL_t_D = UtilityPage.Slider({
