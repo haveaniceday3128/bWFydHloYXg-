@@ -232,8 +232,8 @@ local DD = CombatPage.Slider({
    Callback = function()
        for i,v in next, getgc(true) do
            if type(v) == "table" and v.Recharge then
-               v.HWidth = 500
-               v.HLength = 500
+               v.HWidth = 12
+               v.HLength = 12
            end
        end
    end,
@@ -244,9 +244,10 @@ local DD = CombatPage.Slider({
    Callback = function()
        for i,v in next, getgc(true) do
            if type(v) == "table" and v.SpeedMultiplier then
-               v.Recharge = 0.01
-               v.WindUp = 0.01
-               v.SpeedMultiplier = 1.06
+               v.Recharge = 0.13
+               v.WindUp = 0.13
+               v.SpeedMultiplier = 1.02
+	       v.WeaponArtRecharge = 0.13			
            end
        end
    end
