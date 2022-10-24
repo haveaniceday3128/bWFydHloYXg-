@@ -313,6 +313,10 @@ end)
       local new = Instance.new("IntValue", game:GetService("Players").random660.Backpack) -- also change to your path
       new.Name = "Stamina"
       new.Value = "100"
+      game:GetService("Players").thekingler1.Backpack.Stamina:Destroy() -- change to your path
+      local new = Instance.new("IntValue", game:GetService("Players").thekingler1.Backpack) -- also change to your path
+      new.Name = "Stamina"
+      new.Value = "100"
 end
 })
 
