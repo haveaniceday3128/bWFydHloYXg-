@@ -247,7 +247,7 @@ local DD = CombatPage.Slider({
                v.Recharge = 0.13
                v.WindUp = 0.13
                v.SpeedMultiplier = 1.02
-	       v.WeaponArtRecharge = 0.13			
+               v.WeaponArtRecharge = 0.28
            end
        end
    end
