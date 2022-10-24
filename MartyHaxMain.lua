@@ -1,4 +1,3 @@
-
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/UILib.lua"))()
 local runService = game:GetService("RunService")
 local plr = game.Players.LocalPlayer
