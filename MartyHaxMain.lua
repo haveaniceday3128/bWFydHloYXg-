@@ -109,6 +109,7 @@ local SetWalk = 25
 local parryDist = 15
 local APDelay = 0.3
 local dodgeDist = 15
+local SpeedMult = 1
 
 function WalkspeedSet (enabled)
    pcall(function()
@@ -204,7 +205,7 @@ local coomzone = CombatPage.Slider({
        APDelay = value
    end,
    Min = 0.01,
-   Max = 2,
+   Max = 0.8,
    Def = APDelay
 })
 
@@ -242,14 +243,24 @@ local DD = CombatPage.Slider({
    Text = "Weapon Speed",
    Callback = function()
        for i,v in next, getgc(true) do
-           if type(v) == "table" and v.SpeedMultiplier then
-               v.Recharge = 0.13
-               v.WindUp = 0.13
-               v.SpeedMultiplier = 1.02
-               v.WeaponArtRecharge = 0.28
+           if type(v) == "table" and v.Recharge then
+               v.Recharge = 0.3
+               v.WindUp = 0.3
+               v.SpeedMultiplier = SpeedMult
+               v.WeaponArtRecharge = 0.78
            end
        end
    end
+})
+
+   CombatPage.Slider({
+   Text = "Weapon Speed Multiplier",
+   Callback = function(value)
+       SpeedMult = value
+   end,
+   Min = 1,
+   Max = 2,
+   Def = SpeedMult
 })
 
    CombatPage.Button({
@@ -309,11 +320,7 @@ end)
    CombatPage.Button({
    Text = "Infinite Stamina",
    Callback = function()
-       game:GetService("Players").random660.Backpack.Stamina:Destroy() -- change to your path
-      local new = Instance.new("IntValue", game:GetService("Players").random660.Backpack) -- also change to your path
-      new.Name = "Stamina"
-      new.Value = "100"
-      game:GetService("Players").iloveplayingloregame.Backpack.Stamina:Destroy() -- change to your path
+       game:GetService("Players").iloveplayingloregame.Backpack.Stamina:Destroy() -- change to your path
       local new = Instance.new("IntValue", game:GetService("Players").iloveplayingloregame.Backpack) -- also change to your path
       new.Name = "Stamina"
       new.Value = "100"
@@ -394,31 +401,18 @@ UtilityPage.Button({
 spawn(function()
    while true do
        WalkspeedSet(Toggle4:GetState())
-       wait(0.1)
+       task.wait(0.1)
    end
 end)
 
 function parry()
 local VirtualInputManager = game:GetService('VirtualInputManager')
+task.wait(APDelay)
 VirtualInputManager:SendMouseButtonEvent(1, 1, 1, true, game, 1)
 end
 
 function dodge()
-local VirtualInputManager = game:GetService('VirtualInputManager')
-VirtualInputManager:SendKeyEvent(true, "D", false, game)
-task.wait(0.01)
-VirtualInputManager:SendKeyEvent(true, "Q", false, game)
-task.wait(0.01)
-VirtualInputManager:SendKeyEvent(false, "D", false, game)
-task.wait(0.01)
-VirtualInputManager:SendKeyEvent(false, "Q", false, game)
-end
-
-function whirligigdodge()
-local VirtualInputManager = game:GetService('VirtualInputManager')
-VirtualInputManager:SendKeyEvent(true, "Q", false, game)
-task.wait()
-VirtualInputManager:SendKeyEvent(false, "Q", false, game)
+game:GetService("ReplicatedStorage").Dash:InvokeServer()
 end
 
 -- Main loop
@@ -440,7 +434,7 @@ for _, anim in next, anims do
                            end end
                           
 
-wait(APDelay) --Prevents mass event firing
+wait(0.01) --Prevents mass event firing
 end
 end
 end
@@ -489,7 +483,7 @@ for _, anim in next, anims do
                            if asehaeh:GetState() then
                                if debounce == false then
                                if (plrChar.HumanoidRootPart.Position - char.HumanoidRootPart.Position).Magnitude <= dodgeDist and plrChar.Humanoid.Health > 0 and not plrChar.Humanoid.PlatformStand then
-   whirligigdodge()
+   dodge()
    end
                            end end
                           
