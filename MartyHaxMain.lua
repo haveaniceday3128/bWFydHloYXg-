@@ -122,11 +122,11 @@ function WalkspeedSet (enabled)
 end
 
 local UI = Material.Load({
-    Title = "MartyHax Lite",
+    Title = "Drip Lite",
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Dark"
+    Theme = "Jester"
 })
 
 local Home = UI.New({
@@ -206,7 +206,7 @@ local coomzone = CombatPage.Slider({
        APDelay = value
    end,
    Min = 0.01,
-   Max = 0.8,
+   Max = 0.6,
    Def = APDelay
 })
 
@@ -243,6 +243,13 @@ local WS = CombatPage.Toggle({
    Min = 1,
    Max = 2,
    Def = SpeedMult
+})
+
+local IS = CombatPage.Toggle({
+   Text = "Infinite Stamina",
+   Callback = function()
+
+end
 })
 
    CombatPage.Button({
@@ -297,16 +304,6 @@ end
 end
 end)
    end,
-})
-
-   CombatPage.Button({
-   Text = "Infinite Stamina",
-   Callback = function()
-       game:GetService("Players").iloveplayingloregame.Backpack.Stamina:Destroy() -- change to your path
-      local new = Instance.new("IntValue", game:GetService("Players").iloveplayingloregame.Backpack) -- also change to your path
-      new.Name = "Stamina"
-      new.Value = "100"
-end
 })
 
 local WL_t_D = UtilityPage.Slider({
@@ -395,6 +392,13 @@ end
 
 function dodge()
 game:GetService("ReplicatedStorage").Dash:InvokeServer()
+end
+
+function infinitestamina()
+game:GetService("Players").LocalPlayer.Backpack.Stamina:Destroy() -- change to your path
+local new = Instance.new("IntValue", game:GetService("Players").LocalPlayer.Backpack) -- also change to your path
+new.Name = "Stamina"
+new.Value = "100"
 end
 
 function weaponspeed()
@@ -499,6 +503,24 @@ for i, plrChar in next, workspace.Alive:GetChildren() do
 if plrChar ~= char then
     if WS:GetState() then
    weaponspeed()
+   end
+   end
+   end
+
+wait(0.01)
+end)
+end
+end)
+
+spawn(function()
+while true do
+pcall(function()
+char = plr.Character
+runService.RenderStepped:Wait()
+for i, plrChar in next, workspace.Alive:GetChildren() do
+if plrChar ~= char then
+    if IS:GetState() then
+   infinitestamina()
    end
    end
    end
