@@ -1,3 +1,4 @@
+--Reminder to change the name and shit since I keep forgetting...
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/UILib.lua"))()
 local runService = game:GetService("RunService")
 local plr = game.Players.LocalPlayer
@@ -227,29 +228,10 @@ local DD = CombatPage.Slider({
    Def = dodgeDist
 })
 
-   CombatPage.Button({
-   Text = "Reach",
-   Callback = function()
-       for i,v in next, getgc(true) do
-           if type(v) == "table" and v.Recharge then
-               v.HWidth = 12
-               v.HLength = 12
-           end
-       end
-   end,
-})
-
-   CombatPage.Button({
+local WS = CombatPage.Toggle({
    Text = "Weapon Speed",
    Callback = function()
-       for i,v in next, getgc(true) do
-           if type(v) == "table" and v.Recharge then
-               v.Recharge = 0.3
-               v.WindUp = 0.3
-               v.SpeedMultiplier = SpeedMult
-               v.WeaponArtRecharge = 0.78
-           end
-       end
+   
    end
 })
 
@@ -415,6 +397,17 @@ function dodge()
 game:GetService("ReplicatedStorage").Dash:InvokeServer()
 end
 
+function weaponspeed()
+           for i,v in next, getgc(true) do
+           if type(v) == "table" and v.Recharge then
+               v.Recharge = 0.3
+               v.WindUp = 0.3
+               v.SpeedMultiplier = SpeedMult
+               v.WeaponArtRecharge = 0.78
+           end
+      end
+end
+
 -- Main loop
 spawn(function()
 while true do
@@ -434,7 +427,7 @@ for _, anim in next, anims do
                            end end
                           
 
-wait(0.01) --Prevents mass event firing
+wait(0.01)
 end
 end
 end
@@ -461,7 +454,7 @@ for _, anim in next, anims do
                            end end
                           
 
-wait(0.01) --Prevents mass event firing
+wait(0.01)
 end
 end
 end
@@ -488,11 +481,29 @@ for _, anim in next, anims do
                            end end
                           
 
-wait(0.01) --Prevents mass event firing
+wait(0.01)
 end
 end
 end
 end
+end)
+end
+end)
+
+spawn(function()
+while true do
+pcall(function()
+char = plr.Character
+runService.RenderStepped:Wait()
+for i, plrChar in next, workspace.Alive:GetChildren() do
+if plrChar ~= char then
+    if WS:GetState() then
+   weaponspeed()
+   end
+   end
+   end
+
+wait(0.01)
 end)
 end
 end)
