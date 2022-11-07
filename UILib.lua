@@ -2315,7 +2315,7 @@ function Material.Load(Config)
 					local Px = GetXY(SliderTracker)
 					local SizeFromScale = (MinSize +  (MaxSize - MinSize)) * Px
 					local Value = SliderMin + ((SliderMax - SliderMin) * Px)
-				        local SliderVal = math.floor(SliderMin + ((SliderMax - SliderMin) * Px)) / 10
+				        local SliderVal = math.floor(((SliderMin + ((SliderMax - SliderMin) * Px)) * 100) / 100)
 					SizeFromScale -= (SizeFromScale % 2)
 					TweenService:Create(SliderDot, TweenInfo.new(0.15), {Position = UDim2.fromScale(Px,0.5) - UDim2.fromOffset(5,5)}):Play()
 					TweenService:Create(SliderFill, TweenInfo.new(0.15), {Size = UDim2.fromScale(Px, 1)}):Play()
