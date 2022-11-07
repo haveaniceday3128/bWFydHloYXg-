@@ -162,7 +162,7 @@ Home.Button({
 })
 
 Home.Button({
-   Text = "Authentication by haveaniceday#3128",
+   Text = "Authentication by squarescape#3128",
    Callback = function()
        -- lol
    end
