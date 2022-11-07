@@ -196,7 +196,7 @@ local AP_t_D = CombatPage.Slider({
    Callback = function(value)
        parryDist = value
    end,
-   Min = 0,
+   Min = 1,
    Max = 50,
    Def = parryDist
 })
@@ -220,7 +220,7 @@ local asehaeh = CombatPage.Toggle({
 })
 
 local DD = CombatPage.Slider({
-   Text = "AutoDodge Distance",
+   Text = "AutoDodge Trigger Distance",
    Callback = function(value)
        dodgeDist = value
    end,
@@ -544,6 +544,13 @@ TeleportsPage.Button({
 	Text = "Elder One's Conduit",
 	Callback = function()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.379517, 313.685333, 1432.37793, 0.913549721, 0, 0.406727046, 0, 1, 0, -0.406727046, 0, 0.913549721)
+	end
+ })
+ 
+ TeleportsPage.Button({
+	Text = "Harvest",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-71.8545685, -266.542847, 858.611938, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	end
  })
  
