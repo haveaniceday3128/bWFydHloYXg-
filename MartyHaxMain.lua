@@ -95,6 +95,7 @@ local dodgeIds = {
     "rbxassetid://9185633387";
     "rbxassetid://9614600746";
     "rbxassetid://10218213093";
+    "rbxassetid://11065468510";
 }
 
 local whirligigIds = {
@@ -126,7 +127,7 @@ local UI = Material.Load({
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Jester"
+    Theme = "Dark"
 })
 
 local Home = UI.New({
@@ -161,7 +162,7 @@ Home.Button({
 })
 
 Home.Button({
-   Text = "Authentication by squarescape#3128",
+   Text = "Authentication by haveaniceday#3128",
    Callback = function()
        -- lol
    end
@@ -205,8 +206,8 @@ local coomzone = CombatPage.Slider({
    Callback = function(value)
        APDelay = value
    end,
-   Min = 0.01,
-   Max = 0.6,
+   Min = 0.1,
+   Max = 2,
    Def = APDelay
 })
 
@@ -386,7 +387,8 @@ end)
 
 function parry()
 local VirtualInputManager = game:GetService('VirtualInputManager')
-task.wait(APDelay)
+print("Parry Activation")
+wait(APDelay)
 VirtualInputManager:SendMouseButtonEvent(1, 1, 1, true, game, 1)
 end
 
@@ -431,7 +433,7 @@ for _, anim in next, anims do
                            end end
                           
 
-wait(0.01)
+wait(0.3)
 end
 end
 end
@@ -458,7 +460,7 @@ for _, anim in next, anims do
                            end end
                           
 
-wait(0.01)
+wait(0.3)
 end
 end
 end
@@ -485,7 +487,7 @@ for _, anim in next, anims do
                            end end
                           
 
-wait(0.01)
+wait(0.3)
 end
 end
 end
@@ -503,12 +505,11 @@ for i, plrChar in next, workspace.Alive:GetChildren() do
 if plrChar ~= char then
     if WS:GetState() then
    weaponspeed()
-   end
-   end
-   end
-
-wait(0.01)
+end
+end
+end
 end)
+wait(1.5)
 end
 end)
 
@@ -521,12 +522,11 @@ for i, plrChar in next, workspace.Alive:GetChildren() do
 if plrChar ~= char then
     if IS:GetState() then
    infinitestamina()
-   end
-   end
-   end
-
-wait(0.01)
+end
+end
+end
 end)
+wait(1.5)
 end
 end)
 
@@ -544,5 +544,12 @@ TeleportsPage.Button({
 	Text = "Elder One's Conduit",
 	Callback = function()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.379517, 313.685333, 1432.37793, 0.913549721, 0, 0.406727046, 0, 1, 0, -0.406727046, 0, 0.913549721)
+	end
+ })
+ 
+ TeleportsPage.Button({
+	Text = "The Drain (W.I.P Area)",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1838.29443, -634.047058, 508.572784, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	end
  })
