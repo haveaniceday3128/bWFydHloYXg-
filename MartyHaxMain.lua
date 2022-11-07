@@ -122,11 +122,11 @@ function WalkspeedSet (enabled)
 end
 
 local UI = Material.Load({
-    Title = "Drip Lite",
+    Title = "MartyHax Lite",
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Jester"
+    Theme = "Dark"
 })
 
 local Home = UI.New({
@@ -161,7 +161,7 @@ Home.Button({
 })
 
 Home.Button({
-   Text = "Authentication by haveaniceday#3128",
+   Text = "Authentication by squarescape#3128",
    Callback = function()
        -- lol
    end
