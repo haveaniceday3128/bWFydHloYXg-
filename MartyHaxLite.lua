@@ -25,6 +25,7 @@ local TextLabel = Instance.new("TextLabel")
 
 ScreenGui.Parent = game.CoreGui
 
+ScreenGui.Name = "MartyHax Lite Watermark"
 TextLabel.Parent = ScreenGui
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
@@ -360,8 +361,9 @@ UtilityPage.Button({
    Text = "Blatant Mode",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MartyHaxBlatant.lua"))()
-   task.wait(0.5)
+   task.wait(0.3)
    game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
+   game:GetService("CoreGui")["MartyHax Blatant Watermark"]:Destroy()
    end
 })
 
