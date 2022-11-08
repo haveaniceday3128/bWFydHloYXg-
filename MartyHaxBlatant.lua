@@ -25,6 +25,7 @@ local TextLabel = Instance.new("TextLabel")
 
 ScreenGui.Parent = game.CoreGui
 
+ScreenGui.Name = "MartyHax Blatant Watermark"
 TextLabel.Parent = ScreenGui
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
@@ -33,7 +34,7 @@ TextLabel.Position = UDim2.new(0.114306785, 0, 0.953865409, 0)
 TextLabel.Size = UDim2.new(0, 151, 0, 44)
 TextLabel.ZIndex = 2
 TextLabel.Font = Enum.Font.SourceSansSemibold
-TextLabel.Text = "MartyHax Lite Executed, use the Control Module"
+TextLabel.Text = "MartyHax Blatant Executed, use the Control Module"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -380,8 +381,9 @@ UtilityPage.Button({
    Text = "Lite Mode",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MartyHaxLite.lua"))()
-   task.wait(0.5)
+   task.wait(0.3)
    game:GetService("CoreGui")["MartyHax Blatant"]:Destroy()
+   game:GetService("CoreGui")["MartyHax Lite Watermark"]:Destroy()
    end
 })
 
