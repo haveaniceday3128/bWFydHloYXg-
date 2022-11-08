@@ -1216,7 +1216,7 @@ function Material.Load(Config)
 			local MenuAdded, MenuButton = TryAddMenu(DropdownBar, Menu, {})
 			
 			if MenuAdded then
-				DropdownToggle.Position = UDim2.fromOffset(25,0)
+				DropdownToggle.Position -= UDim2.fromOffset(25,0)
 				MenuButton.ImageColor3 = Theme.DropdownAccent
 			end
 			
