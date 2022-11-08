@@ -381,7 +381,7 @@ UtilityPage.Button({
    Text = "Lite Mode",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MartyHaxLite.lua"))()
-   task.wait(0.3)
+   task.wait(0.01)
    game:GetService("CoreGui")["MartyHax Blatant"]:Destroy()
    game:GetService("CoreGui")["Blatant Watermark"]:Destroy()
    end
