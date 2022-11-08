@@ -359,8 +359,9 @@ UtilityPage.Button({
 UtilityPage.Button({
    Text = "Blatant Mode",
    Callback = function()
-   game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
    loadstring(game:HttpGet("https://github.com/PixCarAtHome/MartyHax/edit/main/MartyHaxBlatant.lua"))()
+   task.wait(0.3)
+   game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
    end
 })
 
