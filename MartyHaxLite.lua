@@ -359,7 +359,7 @@ UtilityPage.Button({
 UtilityPage.Button({
    Text = "Blatant Mode",
    Callback = function()
-   loadstring(game:HttpGet("https://github.com/PixCarAtHome/MartyHax/edit/main/MartyHaxBlatant.lua"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MartyHaxBlatant.lua"))()
    task.wait(0.3)
    end
 })
