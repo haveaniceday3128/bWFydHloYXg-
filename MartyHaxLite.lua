@@ -361,7 +361,6 @@ UtilityPage.Button({
    Callback = function()
    loadstring(game:HttpGet("https://github.com/PixCarAtHome/MartyHax/edit/main/MartyHaxBlatant.lua"))()
    task.wait(0.3)
-   game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
    end
 })
 
