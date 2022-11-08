@@ -363,7 +363,7 @@ UtilityPage.Button({
    loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MartyHaxBlatant.lua"))()
    task.wait(0.3)
    game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
-   game:GetService("CoreGui")["MartyHax Blatant Watermark"]:Destroy()
+   game:GetService("CoreGui")["MartyHax Lite Watermark"]:Destroy()
    end
 })
 
