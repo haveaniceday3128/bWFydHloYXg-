@@ -704,7 +704,7 @@ local TargetParent = RunService:IsStudio() and Player.PlayerGui or CoreGuiServic
 
 function Material.Load(Config)
 	local Style = (Config.Style and math.clamp(Config.Style, 1, 3)) or 1
-	local Title = "MartyHax Lite"
+	local Title = Congig.Title or "MartyHax Lite"
 	local SizeX = Config.SizeX or 300
 	local SizeY = Config.SizeY or 500
 	local Theme = Config.Theme or "Light"
@@ -726,7 +726,7 @@ function Material.Load(Config)
 	end
 	
 	local NewInstance = Objects.new("ScreenGui")
-	NewInstance.Name = "MartyHax Lite"
+	NewInstance.Name = Title
 	NewInstance.Parent = TargetParent
 	
 	MainGUI = NewInstance
