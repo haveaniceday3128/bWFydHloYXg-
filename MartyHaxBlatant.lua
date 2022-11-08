@@ -377,9 +377,10 @@ UtilityPage.Button({
 })
 
 UtilityPage.Button({
-   Text = "Destroy GUI",
+   Text = "Lite Mode",
    Callback = function()
    game:GetService("CoreGui")["MartyHax Blatant"]:Destroy()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MartyHaxLite.lua"))()
    end
 })
 
