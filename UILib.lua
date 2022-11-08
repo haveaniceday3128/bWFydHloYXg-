@@ -726,7 +726,7 @@ function Material.Load(Config)
 	end
 	
 	local NewInstance = Objects.new("ScreenGui")
-	NewInstance.Name = Title
+	NewInstance.Name = "MartyHax Lite"
 	NewInstance.Parent = TargetParent
 	
 	MainGUI = NewInstance
