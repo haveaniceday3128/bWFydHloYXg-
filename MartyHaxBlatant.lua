@@ -319,27 +319,6 @@ local WL_t_D = UtilityPage.Slider({
 })
 
 UtilityPage.Button({
-   Text = "HumanoidRootPart Deleter",
-   Callback = function()
-       local C = game.Players.LocalPlayer.Character
-C.Parent = nil
-C.HumanoidRootPart:Destroy()
-C.Parent = game.workspace
-wait()
-local Chr = game:GetService("Players").LocalPlayer.Character
-local A = getrawmetatable(game)
-local B = A.__index
-setreadonly(A, false)
-A.__index = newcclosure(function(self, key)
-   if self == Chr and key == "HumanoidRootPart" then
-       return Chr.UpperTorso
-   end
-   return B(self, key)
-end)
-   end
-})
-
-UtilityPage.Button({
    Text = "Invisiblity",
    Callback = function()
                 local savedpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
