@@ -360,10 +360,18 @@ UtilityPage.Button({
    Text = "Lite Mode",
    Callback = function()
    game.StarterGui:SetCore("SendNotification", {
-           Title = "Lite Mode Active";
+           Title = "Lite Mode Activated";
            Duration = 1;
            Text = "";
    })
+   local litemodeswitch = Instance.new("Sound", game.Workspace)
+   litemodeswitch.SoundId = "rbxassetid://4612384434"
+
+   if not litemodeswitch.IsLoaded then
+	litemodeswitch.Loaded:Wait()
+   end
+
+   litemodeswitch:Play()
    game:GetService("CoreGui")["MartyHax Blatant"]:Destroy()
    game:GetService("CoreGui")["Blatant Watermark"]:Destroy()
    wait(0.01)
