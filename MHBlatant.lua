@@ -50,6 +50,13 @@ end
 
 sound:Play()
 
+local litemodeswitch = Instance.new("Sound", game.Workspace)
+litemodeswitch.SoundId = "rbxassetid://4612384434"
+
+if not litemodeswitch.IsLoaded then
+       litemodeswitch.Loaded:Wait()
+end
+
 local animIds = {
     "rbxassetid://9388007530";
     "rbxassetid://9388048957";
@@ -364,13 +371,6 @@ UtilityPage.Button({
            Duration = 1;
            Text = "";
    })
-   local litemodeswitch = Instance.new("Sound", game.Workspace)
-   litemodeswitch.SoundId = "rbxassetid://4612384434"
-
-   if not litemodeswitch.IsLoaded then
-	litemodeswitch.Loaded:Wait()
-   end
-
    litemodeswitch:Play()
    game:GetService("CoreGui")["MartyHax Blatant"]:Destroy()
    game:GetService("CoreGui")["Blatant Watermark"]:Destroy()
