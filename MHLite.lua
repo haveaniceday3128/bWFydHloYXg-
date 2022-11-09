@@ -367,16 +367,16 @@ UtilityPage.Button({
 UtilityPage.Button({
    Text = "Blatant Mode",
    Callback = function()
-   wait(0.01)
-   game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
-   game:GetService("CoreGui")["MartyHax Lite Watermark"]:Destroy()
-   wait(0.01)
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MHBlatant.lua"))()
       game.StarterGui:SetCore("SendNotification", {
            Title = "Blatant Mode Activated";
            Duration = 1;
            Text = "";
    })
+   wait(0.01)
+   game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
+   game:GetService("CoreGui")["MartyHax Lite Watermark"]:Destroy()
+   wait(0.01)
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MHBlatant.lua"))()
    end
 })
 
