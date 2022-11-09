@@ -50,6 +50,13 @@ end
 
 sound:Play()
 
+local blatantmodeswitch = Instance.new("Sound", game.Workspace)
+blatantmodeswitch.SoundId = "rbxassetid://4612384434"
+
+if not blatantmodeswitch.IsLoaded then
+       blatantmodeswitch.Loaded:Wait()
+end
+
 local animIds = {
     "rbxassetid://9388007530";
     "rbxassetid://9388048957";
@@ -360,24 +367,17 @@ UtilityPage.Button({
 UtilityPage.Button({
    Text = "Blatant Mode",
    Callback = function()
-   game.StarterGui:SetCore("SendNotification", {
-           Title = "Blatant Mode Activated";
-           Duration = 1;
-           Text = "";
-   })
-   local blatantmodeswitch = Instance.new("Sound", game.Workspace)
-   blatantmodeswitch.SoundId = "rbxassetid://4612384434"
-
-   if not blatantmodeswitch.IsLoaded then
-	blatantmodeswitch.Loaded:Wait()
-   end
-
    blatantmodeswitch:Play()
    wait(0.01)
    game:GetService("CoreGui")["MartyHax Blatant"]:Destroy()
    game:GetService("CoreGui")["Blatant Watermark"]:Destroy()
    wait(0.01)
    loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MHLite.lua"))()
+      game.StarterGui:SetCore("SendNotification", {
+           Title = "Blatant Mode Activated";
+           Duration = 1;
+           Text = "";
+   })
    end
 })
 
