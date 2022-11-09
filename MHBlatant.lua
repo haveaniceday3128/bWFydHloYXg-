@@ -134,7 +134,7 @@ local UI = Material.Load({
     Style = 3,
     SizeX = 300,
     SizeY = 400,
-    Theme = "Light"
+    Theme = "Aqua"
 })
 
 local Home = UI.New({
