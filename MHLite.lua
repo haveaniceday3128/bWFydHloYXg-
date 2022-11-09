@@ -367,7 +367,6 @@ UtilityPage.Button({
 UtilityPage.Button({
    Text = "Blatant Mode",
    Callback = function()
-   blatantmodeswitch:Play()
    wait(0.01)
    game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
    game:GetService("CoreGui")["MartyHax Lite Watermark"]:Destroy()
