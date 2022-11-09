@@ -236,6 +236,14 @@ local DD = CombatPage.Slider({
    Def = dodgeDist
 })
 
+local dodger = CombatPage.Toggle({
+   Text = "Infinite Dodge",
+   Callback = function(value)
+       -- ye
+   end,
+   Enabled = false
+})
+
 local WS = CombatPage.Toggle({
    Text = "Weapon Speed",
    Callback = function()
@@ -529,6 +537,23 @@ end
 end
 end)
 wait(1.5)
+end
+end)
+
+spawn(function()
+while true do
+pcall(function()
+char = plr.Character
+runService.RenderStepped:Wait()
+for i, plrChar in next, workspace.Alive:GetChildren() do
+if plrChar ~= char then
+    if dodger:GetState() then
+   dodge()
+end
+end
+end
+end)
+wait(0.01)
 end
 end)
 
