@@ -372,7 +372,7 @@ UtilityPage.Button({
            Duration = 1;
            Text = "";
    })
-   wait(0.01)
+   blatantmodeswitch:play
    game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
    game:GetService("CoreGui")["MartyHax Lite Watermark"]:Destroy()
    wait(0.01)
