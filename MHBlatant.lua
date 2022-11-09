@@ -553,7 +553,7 @@ end
 end
 end
 end)
-wait(0.01)
+runService.Heartbeat:Wait(0.01)
 end
 end)
 
