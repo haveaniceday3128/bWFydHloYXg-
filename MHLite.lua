@@ -365,6 +365,14 @@ UtilityPage.Button({
            Duration = 1;
            Text = "";
    })
+   local blatantmodeswitch = Instance.new("Sound", game.Workspace)
+   blatantmodeswitch.SoundId = "rbxassetid://4612384434"
+
+   if not blatantmodeswitch.IsLoaded then
+	blatantmodeswitch.Loaded:Wait()
+   end
+
+   blatantmodeswitch:Play()
    game:GetService("CoreGui")["MartyHax Blatant"]:Destroy()
    game:GetService("CoreGui")["Blatant Watermark"]:Destroy()
    wait(0.01)
