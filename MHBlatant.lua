@@ -519,7 +519,7 @@ end
 end
 end
 end)
-wait(1.5)
+wait(2)
 end
 end)
 
@@ -536,7 +536,7 @@ end
 end
 end
 end)
-wait(1.5)
+wait(2)
 end
 end)
 
