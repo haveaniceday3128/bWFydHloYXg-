@@ -8,6 +8,10 @@ local InputService = game:GetService("UserInputService")
 local CoreGuiService = game:GetService("CoreGui")
 local ContentService = game:GetService("ContentProvider")
 
+pcall(function()
+    syn.protect_gui(game:GetService("CoreGUI"))
+end)
+
 local Themes = {
 	Light = {
 		MainFrame = Color3.fromRGB(255,255,255),
