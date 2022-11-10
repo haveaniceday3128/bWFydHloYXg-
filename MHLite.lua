@@ -23,10 +23,6 @@ end)
 local ScreenGui = Instance.new("ScreenGui")
 local TextLabel = Instance.new("TextLabel")
 
-pcall(function()
-    syn.protect_gui(ScreenGui)
-end)
-
 ScreenGui.Parent = game.CoreGui
 
 ScreenGui.Name = "MartyHax Lite Watermark"
@@ -570,4 +566,8 @@ TeleportsPage.Button({
 
 pcall(function()
     syn.protect_gui(game:GetService("CoreGui")["MartyHax Lite"])
+end)
+
+pcall(function()
+    syn.protect_gui(game:GetService("CoreGui")["MartyHax Lite Watermark"])
 end)
