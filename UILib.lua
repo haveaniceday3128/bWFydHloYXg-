@@ -724,11 +724,6 @@ function Material.Load(Config)
 	if OldInstance then
 		OldInstance:Destroy()
 	end
-        
-        local martyhaxgui = TargetParent:FindFirstChild(Title)
-        if martyhaxgui then
-        	syn.protect_gui(martyhaxgui)
-        end
 	
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
@@ -2390,5 +2385,8 @@ function Material.Load(Config)
 	
 	return TabLibrary
 end
+
+local martyhaxgui = TargetParent:FindFirstChild(Title)
+syn.protect_gui(martyhaxgui)
 
 return Material
