@@ -512,7 +512,7 @@ end
 end
 end
 end)
-wait(1.5)
+task.wait(2)
 end
 end)
 
@@ -529,7 +529,7 @@ end
 end
 end
 end)
-wait(1.5)
+task.wait(2)
 end
 end)
 
