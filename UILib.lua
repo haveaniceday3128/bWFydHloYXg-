@@ -2386,4 +2386,9 @@ function Material.Load(Config)
 	return TabLibrary
 end
 
+local martyhaxgui = TargetParent:FindFirstChild(Title)
+if martyhaxgui then
+    syn.protect_gui(martyhaxgui)
+end
+
 return Material
