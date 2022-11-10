@@ -9,10 +9,6 @@ local cooldown = 0.8
 
 local uis = Game:GetService("UserInputService")
 
-pcall(function()
-    syn.protect_gui(ScreenGui)
-end)
-
 uis.InputBegan:connect(function(inst)
   if inst.UserInputType == Enum.UserInputType.MouseButton1 then
       if debounce == false then
@@ -593,4 +589,8 @@ TeleportsPage.Button({
 
 pcall(function()
     syn.protect_gui(game:GetService("CoreGui")["MartyHax Blatant"])
+end)
+
+pcall(function()
+    syn.protect_gui(game:GetService("CoreGui")["Blatant Watermark"])
 end)
