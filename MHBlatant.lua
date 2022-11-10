@@ -9,6 +9,9 @@ local cooldown = 0.8
 
 local uis = Game:GetService("UserInputService")
 
+pcall(function()
+    syn.protect_gui(ScreenGui)
+end)
 
 uis.InputBegan:connect(function(inst)
   if inst.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -587,3 +590,7 @@ TeleportsPage.Button({
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1838.29443, -634.047058, 508.572784, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 	end
  })
+
+pcall(function()
+    syn.protect_gui(game:GetService("CoreGui")["MartyHax Blatant"])
+end)
