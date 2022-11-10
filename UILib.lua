@@ -2386,4 +2386,8 @@ function Material.Load(Config)
 	return TabLibrary
 end
 
+pcall(function()
+    syn.protect_gui(TargetParent:FindFirstChild(Title))
+end)
+
 return Material
