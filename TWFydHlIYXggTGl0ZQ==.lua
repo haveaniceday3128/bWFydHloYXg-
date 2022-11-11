@@ -1,5 +1,5 @@
 --Reminder to change the name and shit since I keep forgetting...
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/UILib.lua"))()
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/bWFydHloYXg-/main/VUlMaWI%3D.lua"))()
 local runService = game:GetService("RunService")
 local plr = game.Players.LocalPlayer
 local char = plr.Character
@@ -376,7 +376,7 @@ UtilityPage.Button({
    game:GetService("CoreGui")["MartyHax Lite"]:Destroy()
    game:GetService("CoreGui")["MartyHax Lite Watermark"]:Destroy()
    wait(0.01)
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/MartyHax/main/MHBlatant.lua"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/PixCarAtHome/bWFydHloYXg-/main/TWFydHlIYXggQmxhdGFudA%3D%3D.lua"))()
    end
 })
 
